@@ -1,0 +1,17 @@
+<div #panel class="panel">
+  <!--div class="blur"></div-->
+  <div class="group" *ngIf="ready">
+    <div class="column" *ngFor="let rows of panelMatrix">
+      <div class="row" *ngFor="let pixel of rows">
+        <div class="pixel" *ngIf="pixel.isActive == 1" style="background-color: white;">
+        </div>
+        <div class="pixel" *ngIf="pixel.isActive == 0" style="background-color: black;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <input id="text" class="validate" [(ngModel)]="inputText">
+  <button (click)="appendChar()">append char</button>
+</div>
